@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+    <link href="styles/main.css" rel="stylesheet" />
+    <title>VueJs</title>
+  </head>
+  <body>
+    <div id="app">
+      <b-navbar class="px-4 mb-4" toggleable type="dark" variant="dark">
+        <b-navbar-brand href="#">NavBar</b-navbar-brand>
+    
+        <b-navbar-toggle target="navbar-toggle-collapse">
+          <template #default="{ expanded }">
+            <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
+            <b-icon v-else icon="chevron-bar-down"></b-icon>
+          </template>
+        </b-navbar-toggle>
+    
+        <b-collapse id="navbar-toggle-collapse" is-nav>
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item href="#">Link 1</b-nav-item>
+            <b-nav-item href="#">Link 2</b-nav-item>
+            <b-nav-item href="#" disabled>Disabled</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-navbar>
+      <pokemon-container :loading="loading" :pokemons="pokemons">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"
+      integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script/api.js"></script>
+    <script src="script/components.js"></script>
+    <script src="script/filters.js"></script>
+    <script src="script/app.js"></script>
+  </body>
+</html>
